@@ -1,0 +1,19 @@
+.DATA  
+var1 DW ?
+var2 DW ?
+.CODE
+.MODEL SMALL
+.STACK 100h
+.START UP
+
+MOV [0200h], 024Fh
+MOV [0201h], 026Fh 
+MOV AX, [0200h]
+MOV BX, [0201h] 
+PUSH [0200h]
+POP var1 
+PUSH [0201h]
+POP var2
+
+.EXIT
+END
